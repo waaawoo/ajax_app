@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    # 降順表示にする
+    @posts = Post.order(id: "DESC")
   end
 
   def new
@@ -10,6 +12,8 @@ class PostsController < ApplicationController
 
   def create
     Post.create(content: params[:content])
+    # 投稿後にトップページへリダイレクトされるようにする
+    rdirect_to action: :index
 
   end
 end
