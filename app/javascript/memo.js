@@ -10,15 +10,15 @@ function post(){
     // 入力された値を取得
     const form = document.getElementById("form");
     // 取得したID（form）の値を取得する
-    const formData = new FormData(form)
+    const formData = new FormData(form);
     // JavaScriptからAjaxにリクエストを行うのに必要な処理
     const XHR = new XMLHttpRequest();
     // リクエストの初期化
-    XHR.open("post", "/posts", true)
-    // レスポンス形式を記載
-    XHR.responseType = "json"
-    // リクエスト送信するsendメソッドを使用する
-    XHR.send(formData)
+    XHR.open("post", "/posts", true);
+    // // レスポンス形式を記載
+    XHR.responseType = "json";
+    // // リクエスト送信するsendメソッドを使用する
+    XHR.send(formData);
   });
 }
 

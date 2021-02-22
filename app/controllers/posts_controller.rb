@@ -11,9 +11,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(content: params[:content])
+    # binding.pry
+    # Post.create(content: params[:content])
+    # 変数Postへメモの内容を格納
+    post = Post.create(content: params[:content])
     # 投稿後にトップページへリダイレクトされるようにする
-    rdirect_to action: :index
+    # redirect_to action: :index
+    # json形式で返却 joso{key: value}valueは格納された情報が入っている
+    render json:{post: post}
+
 
   end
 end
