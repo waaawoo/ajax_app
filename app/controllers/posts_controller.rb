@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def create
     # binding.pry
     # Post.create(content: params[:content])
-    # 変数Postへメモの内容を格納
+    # 変数Postへメモの内容を格納 登録された内容を変数へ格納される
     post = Post.create(content: params[:content])
     # 投稿後にトップページへリダイレクトされるようにする
     # redirect_to action: :index

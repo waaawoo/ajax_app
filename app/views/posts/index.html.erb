@@ -1,6 +1,7 @@
 <h1>AjacApp</h1>
 <%= form_with url: "/posts", method: :post, id: "form" do |form| %>
-  <%= form.text_field :content %>
+  <%# Ajax通信後フォームをリセットする用のIDを付与 %>
+  <%= form.text_field :content, id: "content" %>
   <%= form.submit "投稿する", id: "submit" %>
 <% end %>
 
